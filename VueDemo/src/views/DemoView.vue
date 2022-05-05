@@ -12,6 +12,17 @@ import { defineComponent } from "vue";
 
         lastname : "",
         firstname : "",
+
+        isGreen : true,
+        isBold : true,
+        isGiant : true,
+
+        fontSize : '24px',
+        weight : 'bold',
+
+        isVisible : true,
+
+        formateurs : ['Khun', 'Steve', 'Aurélien', 'Loïc', 'Aude']
       }
     },
     computed : {
@@ -57,17 +68,74 @@ import { defineComponent } from "vue";
   <button :disabled="isInactive">Click</button>
 
   <!-- Computed properties-->
+  <h2>Computed properties</h2>
   <label for="lastname">Nom de famille</label>
   <input id="lastname" type="text" v-model="lastname">
   <label for="firstname">Prénom</label>
   <input id="firstname" type="text" v-model="firstname">
   <div>Bienvenue {{fullname}} ! </div>
-  <h2></h2>
+ 
+  <!-- Class & Style Directives -->
+  <h2>Directives de class et de style</h2>
+  <button @click="isGreen = !isGreen">Vert</button>
+  <button @click="isBold = !isBold">Gras</button>  
+  <button @click="isGiant = !isGiant">Giant</button>  
+  <div :class="{ green : isGreen, bold : isBold, giant : isGiant }">Ma balise qu'on va styliser</div>
+  <div :style="{ fontSize : fontSize, fontWeight : 'bold'}">Texte avec style</div>
+
+  <!-- Directives conditionnelles -->
+  <h2>Directives conditionnelles</h2>
+  <button @click="isVisible = !isVisible">Visible/Invisible</button>
+  <div v-if="isVisible">Coucou</div>
+  <div v-else>Hibou</div>
+
+  <!-- Directive boucle -->
+  <h2>Directive boucle</h2>
+  <div v-for="(formateur, index) in formateurs" :key="index">
+    <div>{{formateur}} - {{index}}</div>
+  </div>
+
+  <div>fonction aussi avec le of</div>
+   <div v-for="formateur of formateurs">
+    <div>{{formateur}}</div>
+  </div>
+
+
+  <br>
+    <br>
+      <br>
+        <br>
+          <br>
+            <br>
+             <br>
+    <br>
+      <br>
+        <br>
+          <br>
+            <br>
+             <br>
+    <br>
+      <br>
+        <br>
+          <br>
+            <br>
+             <br>
+    <br>
+      <br>
+        <br>
+          <br>
+            <br>
 
 </template>
 
 <style>
 .green {
   color : green;
+}
+.bold {
+  font-weight: bold;
+}
+.giant {
+  font-size: 32px;
 }
 </style>
