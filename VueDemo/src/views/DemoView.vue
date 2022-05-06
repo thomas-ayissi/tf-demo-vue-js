@@ -97,7 +97,7 @@ import { defineComponent } from "vue";
 
   <div>fonction aussi avec le of</div>
    <div v-for="formateur of formateurs">
-    <div>{{formateur}}</div>
+    <div class="italic">{{formateur}}</div>
   </div>
 
 
