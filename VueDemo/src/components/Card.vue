@@ -26,7 +26,7 @@ export default defineComponent ({
     <div class="fullname">{{firstname}} {{lastname}}</div>
     <div>{{birthdate}}</div>
     <slot></slot>
-    <button @click="$emit('who', firstname)">C'est moi</button>
+    <button class="btn" @click="$emit('who', firstname)">C'est moi</button>
   </div>
 </template>
 

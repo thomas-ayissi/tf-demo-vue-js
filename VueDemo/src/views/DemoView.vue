@@ -70,7 +70,7 @@ import { defineComponent } from "vue"
   <h2>Event Binding</h2>
   <button v-on:click="sayHello()">Say Hello</button>
   <!-- Le raccourcis que tout le monde utilise :  -->
-  <button @click="sayHello()">Say Hello</button>
+  <button class="btn" @click="sayHello()">Say Hello</button>
   <div>{{message}} {{prenom}}</div>
 
   <!-- Attribute binding -->

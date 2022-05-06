@@ -1,3 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.btn {
+    @apply border-black rounded-md border-2 bg-black text-white p-3
+}
+.btn:hover {
+    @apply border-white bg-white text-black
+}
