@@ -32,7 +32,7 @@
     }
 
     .chapter {
-        @apply bg-teal-100 rounded-lg p-3
+        @apply bg-teal-100 rounded-lg p-3 mb-3
     }
     .subchapter{
         @apply mb-3;
