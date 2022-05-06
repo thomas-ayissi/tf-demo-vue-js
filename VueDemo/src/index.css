@@ -28,7 +28,7 @@
     }
 
     main {
-        @apply ml-72 mr-72 mt-4;
+        @apply ml-72 mr-52 mt-4;
     }
 
     .chapter {
@@ -53,12 +53,12 @@
     }
     .demoflex {
         display : flex;
-        @apply flex-row justify-around;
+        @apply flex-row justify-around mb-3;
     }
 
     .democard {
         display : flex;
-        @apply bg-teal-50 rounded-lg p-2 flex-col w-3/12;
+        @apply bg-teal-50 rounded-lg p-2 mx-2 flex-col w-2/6;
     }
     .democardtitle {
         @apply self-center mb-3 text-teal-800 font-bold;

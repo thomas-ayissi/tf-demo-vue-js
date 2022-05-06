@@ -38,9 +38,6 @@ import { defineComponent } from "vue"
       }
     },
     computed : {
-      fullname() : string {
-        return `${this.firstname} ${this.lastname}`
-      }
 
     },
     methods : {
@@ -58,12 +55,7 @@ import { defineComponent } from "vue"
   <DemoBinding></DemoBinding>
 
   <!-- Computed properties-->
-  <h2>Computed properties</h2>
-  <label for="lastname">Nom de famille</label>
-  <input id="lastname" type="text" v-model="lastname">
-  <label for="firstname">Prénom</label>
-  <input id="firstname" type="text" v-model="firstname">
-  <div>Bienvenue {{fullname}} ! </div>
+  
  
   <!-- Class & Style Directives -->
   <h2>Directives de class et de style</h2>

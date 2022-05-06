@@ -9,13 +9,13 @@
           <div>Bienvenue {{ prenom }}</div>
         </div>
         <div class="subchapter">
-        <h4>Binding Two-Way</h4>
-          <div>Votre prénom est {{prenom}}</div>
-          <input type="text" v-model="prenom"/>
+          <h4>Binding Two-Way</h4>
+          <div>Votre prénom est {{ prenom }}</div>
+          <input type="text" v-model="prenom" />
         </div>
         <div class="subchapter">
           <h4>Binding HTML</h4>
-          <div>{{duHTML}}</div>
+          <div>{{ duHTML }}</div>
           <div v-html="duHTML"></div>
         </div>
       </div>
@@ -24,12 +24,12 @@
         <!-- Event binding -->
         <h3 class="democardtitle">Event Binding</h3>
         <div class="subchapter">
-        <button class="btn" v-on:click="sayHello()">Say Hello</button>
-        <!-- Le raccourcis que tout le monde utilise :  -->
-        <button class="btn" @click="sayHello()">Say Hello</button>
-        <div>{{ message }} {{ prenom }}</div>
+          <button class="btn" v-on:click="sayHello()">Say Hello</button>
+          <!-- Le raccourcis que tout le monde utilise :  -->
+          <button class="btn" @click="sayHello()">Say Hello</button>
+          <div>{{ message }} {{ prenom }}</div>
         </div>
-        
+
       </div>
 
       <div class="democard">
@@ -40,6 +40,15 @@
         <!-- Avec le raccourcis que tout le monde utilise :) -->
         <div :id="id" :class="maClass">Ma div avec plein d'attributs</div>
         <button class="btn" :disabled="isInactive">Click</button>
+      </div>
+
+      <div class="democard">
+        <h3 class="democardtitle">Computed properties</h3>
+        <label for="lastname">Nom de famille</label>
+        <input id="lastname" type="text" v-model="lastname">
+        <label for="firstname">Prénom</label>
+        <input id="firstname" type="text" v-model="firstname">
+        <div>Bienvenue {{ fullname }} ! </div>
       </div>
 
     </div>
@@ -60,7 +69,14 @@ export default defineComponent({
       id: "monId",
       isInactive: true,
       maClass: "green",
+      lastname: "",
+      firstname: "",
     };
+  },
+  computed: {
+    fullname(): string {
+      return `${this.firstname} ${this.lastname}`
+    }
   },
   methods: {
     sayHello(): void {
