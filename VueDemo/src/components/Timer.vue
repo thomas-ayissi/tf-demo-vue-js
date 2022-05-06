@@ -1,10 +1,10 @@
 <template>
-  <div>
+  <div class="chapter">
     <h2>Exercice Timer</h2>
     <div>{{time}}</div>
-    <button @click="start()" :disabled="timer!=0">Start</button>
-    <button @click="pause()" :disabled="timer==0">Pause</button>
-    <button @click="reset()" :disabled="secondes==0">Reset</button>
+    <button class="btn" @click="start()" :disabled="timer!=0">Start</button>
+    <button class="btn" @click="pause()" :disabled="timer==0">Pause</button>
+    <button class="btn" @click="reset()" :disabled="secondes==0">Reset</button>
   </div>
 </template>
 

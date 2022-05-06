@@ -3,6 +3,9 @@
 @tailwind utilities;
 
 @layer components {
+    body {
+        min-height: 101vh;
+      }
     .btn {
         @apply border-orange-400 rounded-lg border-2 bg-orange-400 
                 text-orange-50 px-3 py-1 m-1 shadow-lg shadow-orange-400/50;
@@ -68,7 +71,7 @@
         @apply self-center mb-3 text-teal-800 font-bold;
     }
 
-    input[type="text"] {
+    input[type="text"], input[type="number"] {
         @apply border-slate-300 border-2 rounded-md;
     }
 
@@ -84,5 +87,20 @@
     }
     .fullname {
         @apply text-xl font-bold;
+    }
+    table {
+        @apply border-2 border-teal-700;
+    }
+    th,td {
+        @apply p-3 border-2 border-teal-700;
+    }
+    th {
+        @apply bg-teal-700 text-teal-50;
+    }
+    .group {
+        @apply mb-3
+    }
+    .group * {
+        @apply mx-2
     }
 }
