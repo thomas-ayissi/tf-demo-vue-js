@@ -11,6 +11,7 @@ export default defineComponent ({
     lastname : String,
     firstname : String,
     birthdate : String,
+    avatar : String,
   },
   emits : [
     'who'
@@ -23,6 +24,7 @@ export default defineComponent ({
 
 <template>
   <div class="card">
+    <img class="avatar" :src="'../../src/assets/images/'+ avatar" :alt="'avatar de '+firstname">
     <div class="fullname">{{firstname}} {{lastname}}</div>
     <div>{{birthdate}}</div>
     <slot></slot>
@@ -31,13 +33,5 @@ export default defineComponent ({
 </template>
 
 <style>
-.card {
-  background-color: lightblue;
-  width: 200px;
-  height: 200px;
-  margin: 1%;
-}
-.fullname {
-  font-weight: bold;
-}
+
 </style>

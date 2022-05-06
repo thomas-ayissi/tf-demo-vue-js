@@ -55,6 +55,10 @@
         display : flex;
         @apply flex-row justify-around mb-3;
     }
+    .demoflexcol {
+        display : flex;
+        @apply flex-col justify-center mb-3;
+    }
 
     .democard {
         display : flex;
@@ -66,5 +70,19 @@
 
     input[type="text"] {
         @apply border-slate-300 border-2 rounded-md;
+    }
+
+    .card {
+        display : flex;
+         @apply flex-col items-center p-6 bg-teal-800 rounded-lg text-teal-50;
+    }
+    .card * {
+        @apply my-2;
+    }
+    .avatar {
+        @apply w-40 bg-white rounded-full;
+    }
+    .fullname {
+        @apply text-xl font-bold;
     }
 }
