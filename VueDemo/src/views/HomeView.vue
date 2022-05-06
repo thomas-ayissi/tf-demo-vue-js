@@ -62,7 +62,7 @@
         <img class="w-20 rounded-full mr-3" src="../assets/images/eduardo.jpg" alt="">
         <div>
           <h3><a href="https://twitter.com/posva">Eduardo</a></h3>
-          <div>Membre de la team Vue, francophone, surtout sur VueX et Pinia</div>
+          <div>Membre de la team Vue, francophone, Pinia et vueRouter</div>
         </div>
       </div>
       <div class="demoflex">
