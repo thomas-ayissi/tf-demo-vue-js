@@ -2,9 +2,69 @@
 @tailwind components;
 @tailwind utilities;
 
-.btn {
-    @apply border-black rounded-md border-2 bg-black text-white p-3
-}
-.btn:hover {
-    @apply border-white bg-white text-black
+@layer components {
+    .btn {
+        @apply border-orange-400 rounded-lg border-2 bg-orange-400 
+                text-orange-50 px-3 py-1 m-1 shadow-lg shadow-orange-400/50;
+    }
+    .btn:hover {
+        @apply border-orange-50 bg-orange-50 text-orange-400;
+    }
+    .btn:disabled {
+        @apply border-orange-200 bg-orange-200 text-orange-300;
+    }
+
+    .nav {
+        @apply bg-teal-800 text-teal-50;
+        height: 8vh;
+        width: 100%;
+    }
+    .nav ul {
+        @apply flex-row justify-center;
+        display: flex;
+    }
+    .nav li {
+        margin: 1%;
+    }
+
+    main {
+        @apply ml-72 mr-72 mt-4;
+    }
+
+    .chapter {
+        @apply bg-teal-100 rounded-lg p-3
+    }
+    .subchapter{
+        @apply mb-3;
+    }
+
+    h1 {
+        @apply uppercase text-xl font-bold mb-3;
+    }
+
+    h2 {
+        @apply uppercase text-lg font-bold mb-3;
+    }
+    h3 {
+        @apply text-lg mb-3 text-teal-900;
+    }
+    h4 {
+        @apply text-base mb-1 text-teal-700;
+    }
+    .demoflex {
+        display : flex;
+        @apply flex-row justify-around;
+    }
+
+    .democard {
+        display : flex;
+        @apply bg-teal-50 rounded-lg p-2 flex-col w-3/12;
+    }
+    .democardtitle {
+        @apply self-center mb-3 text-teal-800 font-bold;
+    }
+
+    input[type="text"] {
+        @apply border-slate-300 border-2 rounded-md;
+    }
 }

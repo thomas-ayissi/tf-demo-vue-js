@@ -1,10 +1,11 @@
 <script lang="ts">
 import Card  from "../components/Card.vue";
+import DemoBinding from "../components/DemoBinding.vue"
 import { defineComponent } from "vue"
-// import Card from "../components/Card.Vue";
   export default defineComponent ({
     components : {
       Card,
+      DemoBinding
     },
     data() {
       return {
@@ -43,9 +44,6 @@ import { defineComponent } from "vue"
 
     },
     methods : {
-      sayHello() : void {
-        this.message = "Hello";
-      },
       setupFormateur(prenomFormateur : string) : void {
         this.formateurDuJour = prenomFormateur
       }
@@ -57,29 +55,7 @@ import { defineComponent } from "vue"
 <template>
   <h1>Demo VueJS</h1>
   <!-- Binding one-way -->
-  <h2>Binding One-Way</h2>
-  <div>Bienvenue {{prenom}}</div>
-  <!-- Binding two-way -->
-  <h2>Binding Two-Way</h2>
-  <input type="text" v-model="prenom">
-  <!-- Binding avec du html : peu utilisé  -->
-  <h2>Binding HTML</h2>
-  <div v-html="duHTML"></div>
-
-  <!-- Event binding -->
-  <h2>Event Binding</h2>
-  <button v-on:click="sayHello()">Say Hello</button>
-  <!-- Le raccourcis que tout le monde utilise :  -->
-  <button class="btn" @click="sayHello()">Say Hello</button>
-  <div>{{message}} {{prenom}}</div>
-
-  <!-- Attribute binding -->
-  <h2>Attribute Binding</h2>
-  <div v-bind:id="id">Ma div avec plein d'attributs</div>
-  <button v-bind:disabled="isInactive">Click</button>
-  <!-- Avec le raccourcis que tout le monde utilise :) -->
-  <div :id="id" :class="maClass">Ma div avec plein d'attributs</div>
-  <button :disabled="isInactive">Click</button>
+  <DemoBinding></DemoBinding>
 
   <!-- Computed properties-->
   <h2>Computed properties</h2>

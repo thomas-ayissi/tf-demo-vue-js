@@ -1,18 +1,18 @@
 <script lang="ts">
+import NavBar from "./components/NavigationBar.vue"
 export default {
-
+  components : {
+    NavBar
+  }
 }
 </script>
 
 <template>
-  <nav>
-    <ul>
-      <li><RouterLink to="/demo">Demo</RouterLink></li>
-      <li><RouterLink to="/exercice">Exercice</RouterLink></li>
-    </ul>
-  </nav>
+  <NavBar></NavBar>
 
-  <RouterView/>
+  <main>
+    <RouterView/>
+  </main>
 </template>
 
 <style>
