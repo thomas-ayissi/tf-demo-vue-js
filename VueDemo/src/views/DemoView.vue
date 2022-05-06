@@ -1,6 +1,11 @@
 <script lang="ts">
-import { defineComponent } from "vue";
+import Card  from "../components/Card.vue";
+import { defineComponent } from "vue"
+// import Card from "../components/Card.Vue";
   export default defineComponent ({
+    components : {
+      Card,
+    },
     data() {
       return {
         prenom : "Aude",
@@ -22,7 +27,13 @@ import { defineComponent } from "vue";
 
         isVisible : true,
 
-        formateurs : ['Khun', 'Steve', 'Aurélien', 'Loïc', 'Aude']
+        formateurs : ['Khun', 'Steve', 'Aurélien', 'Loïc', 'Aude'],
+        formateurDuJour : "",
+        formateursBis : [
+          { id : 0, lastname : "Ly" , firstname : "Khun" , birthdate : "06/05/1982"},
+          { id : 1, lastname : "Strimelle", firstname : "Aurélien", birthdate : "01/11/1989"},
+          { id : 2, lastname : "Beurive", firstname : "Aude", birthdate : "16/10/1989"}
+        ]
       }
     },
     computed : {
@@ -34,6 +45,9 @@ import { defineComponent } from "vue";
     methods : {
       sayHello() : void {
         this.message = "Hello";
+      },
+      setupFormateur(prenomFormateur : string) : void {
+        this.formateurDuJour = prenomFormateur
       }
 
     }
@@ -100,6 +114,19 @@ import { defineComponent } from "vue";
     <div class="italic">{{formateur}}</div>
   </div>
 
+  <!-- Component props emit -->
+  <h2>Component avec props et emit</h2>
+  <div>Le formateur du jour est {{formateurDuJour}}</div>
+  <!-- <Card lastname="Beurive" firstname="Aude" birthdate="16/10/1989"></Card> -->
+  <div class="flex">
+    <div v-for="formateur of formateursBis">
+    <!-- <Card lastname="formateur.lastname" firstname="formateur.firstname" birthdate="formateur.birthdate"></Card> -->
+    <Card :lastname="formateur.lastname" :firstname="formateur.firstname" :birthdate="formateur.birthdate" @who="setupFormateur">
+      <div>Formateur chez Bstorm</div>
+    </Card>
+    </div>
+  </div>
+
 
   <br>
     <br>
@@ -137,5 +164,9 @@ import { defineComponent } from "vue";
 }
 .giant {
   font-size: 32px;
+}
+.flex {
+  display: flex;
+  justify-content: space-around;
 }
 </style>
